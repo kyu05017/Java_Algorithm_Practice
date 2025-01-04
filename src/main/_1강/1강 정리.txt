@@ -1,4 +1,4 @@
-[1일차]
+[1강] 2025-01-04
 
     [1-1강]
 
@@ -74,7 +74,7 @@
 
             2. Ex) O(n)
                 int sum(int[] n){
-                    int s = 0l
+                    int s = 0;
 
                     for(int i : n){
                         s += i;
@@ -87,7 +87,7 @@
             3. Ex) O(n^2)
                 void bubbleSort(int[] n){
                     for(int i = 0; i < n.length; i++){
-                        for(int j = 0; j < n.length; j++){\
+                        for(int j = 0; j < n.length; j++){
                             if(n[i] < [j]){
                                 int tmp = n[j];
                                 n[j] = n[i];
@@ -109,6 +109,20 @@
                     }
                 }
                 루프를 돌면 돌수록 n개가 들어와도 수행하는 횟수가 절반씩 줄어든다.
+
+            5. Ex) for 문이 두개더라도 O(n) 인경우
+                int sum(int[] n){
+                    int s = 0;
+                    for(int i = 0; i < n.length; i++){
+                        s += i;
+                        for(int j = 0; j < 10; j++){
+                            s += j;
+                        }
+                    }
+                    return s;
+                }
+                for 문이 두개이더라도 n의 증가량에 따라 연산량이 증가하는 구간이 하나일 경우
+                O(n^2)이 아닌 O(n)이다.
 
         3. 정리
             1. 시간복잡도는 수학적으로 정확한 계산이 아닌 n이 얼마나 증가하느냐를 비교하는 척도

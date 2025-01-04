@@ -2,6 +2,7 @@ package src.main._2강;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Objects;
 
 class MyData{
@@ -96,5 +97,31 @@ public class _001_Practice {
 		// 6. element()
 		// 잘사용되지는 않지만 첫번째 요소를 가져온다.
 		System.out.println(((LinkedList<MyData>) list_2).element());
+
+		// 7. 요소의 인덱스 찾기 indexOf()
+		// 리스트의 시작부터 해당 요소가 있는곳 까지 찾아간다.
+		System.out.println(
+				list_2.indexOf(
+						MyData.create(2)
+				)
+		);
+
+		// 8. 뒤에서 부터 인자 찾기 lastIndexOf()
+		// 리스트의 가장 마지막 부터 인자로 받은 요소를 순차적으로 찾아간다.
+		System.out.println(
+				list_2.lastIndexOf(
+						MyData.create(5)
+				)
+		);
+
+		// 9. 순회하기 listIterator
+		// listIterator 로 반환하여 순회 할수 있음.
+		ListIterator<MyData> listIterator = list_2.listIterator();
+		String outPrint = "listIterator : [ ";
+		while(listIterator.hasNext()){
+			outPrint += listIterator.next() + ", ";
+		}
+		outPrint += " ]";
+		System.out.println(outPrint);
 	}
 }

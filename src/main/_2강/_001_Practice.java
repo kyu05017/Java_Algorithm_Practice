@@ -35,6 +35,7 @@ class MyData{
 	}
 }
 
+@SuppressWarnings("all")
 public class _001_Practice {
 
 	public static void main(String[] args){
@@ -123,5 +124,15 @@ public class _001_Practice {
 		}
 		outPrint += " ]";
 		System.out.println(outPrint);
+
+		// 10 순회하기 listIterator(int idx)
+		// 위와 같지만 인덱스 까지만 순회 한다.
+		ListIterator<Integer> listIterator2 = list.listIterator(3);
+		String outPrint2 = "listIterator2 : [ ";
+		while(listIterator2.hasNext()){
+			outPrint2 += listIterator2.next() + ", ";
+		}
+		outPrint2 += " ]";
+		System.out.println(outPrint2);
 	}
 }

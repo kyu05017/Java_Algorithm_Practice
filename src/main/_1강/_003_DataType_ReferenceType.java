@@ -5,7 +5,7 @@ public class _003_DataType_ReferenceType {
 	public static void main(String[] args){
 
 		class ReferenceType {
-			class Data{
+			static class Data{
 				// 필드
 				int a = 0;
 				// 생성자

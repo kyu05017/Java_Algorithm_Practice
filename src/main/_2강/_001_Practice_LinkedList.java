@@ -36,7 +36,7 @@ class MyData{
 }
 
 @SuppressWarnings("all")
-public class _001_Practice {
+public class _001_Practice_LinkedList {
 
 	public static void main(String[] args){
 

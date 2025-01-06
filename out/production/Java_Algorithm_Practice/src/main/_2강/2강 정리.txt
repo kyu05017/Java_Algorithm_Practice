@@ -219,3 +219,22 @@
                 5-16.isEmpty()
                     1. 반환 boolean
                         비어있는지 여부를 반환한다.
+
+        2. LinkedList 와 ArrayList 를 사용할때의 차이
+            2-1. LinkedList
+                1. Double-LinkedList 로 구현 되어 있다.
+                2. List 인터페이스와 Deque 인터페이스를 Implement 하고 있다.
+                3. 양방향으로 element 들이 연결되어 있다.
+
+            2-2. ArrayList
+                1. 내부에 Array 를 가지고 있고, 크기를 늘리고 줄일 수 있다.
+                2. add() 나 Remove()를 할때, 새로운 Array 를 더크게 만들거나 줄여서 기존 값을 복사한다.
+                3. 처음 빈 값을 생성할 때에 생성자에 임의에 최대 값을 정의 할수 있다.
+                4. 인덱스를 값을 빠르게 찾아 올 수있다. (속도면에서는 ArrayList 가 LinkedList 보다 빠르다.)
+                5. 멀티쓰레드 환경에서 동기화가 안되기 때문에 싱글쓰레드 환경에서 사용을 추천한다.
+
+            2-3. Vector
+                1. ArrayList 와 비슷하게 내부에 Array 를 가지고 생성된다.
+                2. ArrayList 처럼 생성자에 정수를 넣어 최대 값을 임의로 지정할 수 있다.
+                3. Vector 는 멀티스레드 환경에서 동기화 되어있기 때문에 멀티스레드 환경에서 사용을 권장한다.
+

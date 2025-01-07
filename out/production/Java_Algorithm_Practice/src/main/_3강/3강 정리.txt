@@ -31,7 +31,7 @@
                 5. remove(key)
                     해당 key 값에 해당하는 값을 지운다.
 
-                5-2 . remove(key,value)
+                5-2. remove(key,value)
                     해당 하는 key, value 값 모두가 같아야 값을 지운다.
                     삭제 후 확인 여부는 반환 값인 boolean 으로 확인 가능하다.
 

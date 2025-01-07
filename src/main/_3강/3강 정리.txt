@@ -1,0 +1,79 @@
+[3강] 2025-01-07
+
+        [3-1장] Map
+
+            1. Map
+                key 와 value 로 이루어진 형태
+                mapping Table Or dictionary 부른다
+
+            1-1. HashTable
+                1.HashTable 은 내부에 Hash 값을 인덱스로 하는 Array 를 가지고 있기에
+                최대 값을 지정할 수 있다.
+
+            1-2. 주요메소드
+
+                1.get(key)
+                    테이블에 해당하는 key 값을 가진 값을 가져온다.
+                    단, 존재하지 않는 경우 null 값을 반환 한다.
+
+                2.getOrDefault(key,defaultValue)
+                    테이블에 해당하는 key 값을 가진 값을 가져온다.
+                    단, 존재하지 않는 경우 defaultValue 값으로 가져온다.
+
+                3. put(key,value)
+                    테이블에 key 값으로 하는 value 값을 넣어준다.
+                    단, 지정된 제네릭에 맞춰야 한다.
+
+                4. putIfAbsent(key,value)
+                    테이블에 key 값으로 하는 value 값을 넣어준다.
+                    단, 값이 이미 존재한다면 삽입하지 않는다.
+
+                5. remove(key)
+                    해당 key 값에 해당하는 값을 지운다.
+
+                5-2 . remove(key,value)
+                    해당 하는 key, value 값 모두가 같아야 값을 지운다.
+                    삭제 후 확인 여부는 반환 값인 boolean 으로 확인 가능하다.
+
+                6. replace(key,value)
+                    해당 key 에 해당 하는 value 값을 덮어 씌운다.
+
+                6-2. replace(key,oldValue,newValue)
+                    해당 key 값과 oldValue 값이 존재해야 해당 값을 new value 값으로 수정한다.
+
+                7. 값만 뽑기
+                    values() : [] 리스트 형태
+
+                8. 키 만뽑기
+                    keySet() : [] 리스트 형태
+
+                9. 비어있는지 유무 확인하기
+                    isEmpty() : true or false
+
+                10. 크기 알아보기
+                    size() : int 형으로 크기 반환
+
+                11. 포함되어 있는지 체크 하기
+                    Key
+                        containsKey(key) - 해당 key 값이 들어 있는지 체크 가능
+
+                    Value
+                        containsValue(value) - 해당 value 값이 들어 있는지 체크 가능
+
+            2. HashMap 과 HashTable 차이
+                 HashMap 은 멀티쓰레드 환경에서 동기화가 안되지만
+                 HashTable 은 멀티쓰레드 환경에서 동기화가 되어있다.
+
+                 *쓰레드 세이프한 환경이 아니라면 HashMap 사용을 권장한다.
+                 *쓰레드 세이프 환경이고 많은 동시성이 발생한다면
+                 ConcurrentHashMap 사용을 적극 권장한다.
+
+        [정리]
+            Array 장점 + List 장점 => 유연하면서도 빠르게 값을 찾아낼 수 있다.
+            Map : Key => hash Function => Hash => Bucket Index => Data
+
+            Map<key,value> 인터페이스 사용
+
+            HashMap : not synchronized
+            HashTable : synchronized
+            ConcurrentHashMap : synchronized + high concurrency

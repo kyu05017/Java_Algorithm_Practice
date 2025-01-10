@@ -32,4 +32,5 @@ public class _004_Practice_03 {
 		// -1 해서 리턴한다.
 		return answer-1;
 	}
+
 }

@@ -1,7 +1,9 @@
 package src.main._4강;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class _003_Practice_02 {
 	public static void main(String[] args){
@@ -36,5 +38,21 @@ public class _003_Practice_02 {
 		}
 
 		System.out.println(re);
+	}
+
+	// 1.강의 풀이
+	private static boolean sol2(String[] words){
+		Set<String> set = new HashSet<>();
+
+		set.add(words[0]);
+		char last = words[0].charAt(words[0].length()-1);
+		for(int i = 1; i < words.length; i++){
+			String w = words[i];
+			char first = w.charAt(0);
+			if(last != first)return false;
+			if(!set.add(words[i])) return false;
+		}
+
+		return true;
 	}
 }

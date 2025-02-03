@@ -54,4 +54,36 @@ public class _003_Practice_02 {
 		answer.offer(cnt);
 		return answer.stream().mapToInt(Integer::intValue).toArray();
 	}
+
+	private static int[] sol3(int[] progresses, int[]speeds){
+		Queue<Integer> queue = new LinkedList<>();
+
+		// progresses [93,30,55]
+ 		// speeds [1,30,5]
+		for(int i = 0;i<progresses.length;i++){
+			float p = progresses[i];
+			float s = speeds[i];
+			int days = (int)(Math.ceil(100 - p)/s);
+
+			queue.offer(days);
+		}
+		//queue[7,3,9]
+		Queue<Integer> queue2 = new LinkedList<>();
+
+
+		int d = (!queue.isEmpty())?queue.poll():0;
+		int cnt = 1;
+		while(!queue.isEmpty()){
+			int n = queue.poll();
+			if(d >= n){
+				cnt++;
+				continue;
+			}
+			queue2.offer(cnt);
+			cnt = 1;
+			d = n;
+		}
+		queue2.offer(cnt);
+		return queue2.stream().mapToInt(Integer::intValue).toArray();
+	}
 }
